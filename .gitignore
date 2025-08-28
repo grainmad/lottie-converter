@@ -2,6 +2,7 @@
 .idea
 lib
 bin/lottie_to_png
+bin/lottie_to_gif
 CMakeFiles
 .cmake
 conan.lock
@@ -9,3 +10,6 @@ conanbuildinfo.txt
 conaninfo.txt
 graph_info.json
 Makefile
+build
+.venv
+.conan2

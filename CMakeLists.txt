@@ -71,4 +71,25 @@ target_link_libraries(
     ZLIB::ZLIB
     ${Threads}
 )
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "bin")
+set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
+
+#
+# lottie_to_gif executable
+#
+add_executable(
+    lottie_to_gif
+    src/lottie_to_gif_main.cpp
+    src/render_gif.cpp src/render_gif.h
+)
+target_compile_options(lottie_to_gif PUBLIC)
+target_link_libraries(
+    lottie_to_gif
+    argparse
+    rlottie
+    ${CMAKE_SOURCE_DIR}/libgifski/libgifski.a
+    ZLIB::ZLIB
+    ${Threads}
+)
+set_target_properties(lottie_to_gif PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
+
+
